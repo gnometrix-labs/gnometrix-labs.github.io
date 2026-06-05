@@ -1,114 +1,54 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gnometrix Labs â€” Software for Discovery</title>
-<meta name="description" content="Gnometrix Labs builds affordable, local-first software for science â€” including GnoWrite, a free scientific manuscript workspace.">
+<title>Gnometrix Labs</title>
+<meta name="description" content="Gnometrix Labs - affordable software for science, built by scientists.">
 <style>
-  :root { color-scheme: light dark; --accent:#2f81f7; --green:#2ea043; --border:rgba(127,127,127,0.22); --card:rgba(127,127,127,0.04); }
+  :root { color-scheme: light dark; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.6;
          color: #1c2733; background: #fafbfc; display: flex; min-height: 100vh; flex-direction: column; }
   @media (prefers-color-scheme: dark) { body { color: #d6dde4; background: #0e1419; } }
-  header { padding: 4rem 1.5rem 2rem; text-align: center; }
+  header { padding: 4.5rem 1.5rem 3rem; text-align: center; }
   h1 { font-size: 2.6rem; letter-spacing: -0.02em; }
   .tagline { font-size: 1.2rem; opacity: 0.75; margin-top: 0.6rem; }
-  main { max-width: 940px; margin: 0 auto; padding: 0 1.5rem 3rem; width: 100%; }
-
-  /* Featured GnoWrite banner */
-  .featured { border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 1.5rem 0 2.5rem;
-              background: linear-gradient(135deg, rgba(47,129,247,0.10), rgba(46,160,67,0.08)); text-align: center; }
-  .featured h2 { font-size: 1.8rem; }
-  .featured .free { display:inline-block; font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.07em;
-                    color:#fff; background:var(--green); padding:0.2rem 0.6rem; border-radius:999px; margin-left:0.5rem; vertical-align:middle; }
-  .featured p { font-size: 1.02rem; opacity: 0.88; max-width: 620px; margin: 0.6rem auto 1.4rem; }
-  .dl-btn { display:inline-block; background: var(--green); color:#fff; font-weight:600; font-size:1.05rem;
-            padding: 0.8rem 1.6rem; border-radius: 10px; text-decoration:none; }
-  .dl-btn:hover { filter:brightness(1.08); text-decoration:none; }
-  .dl-meta { font-size:0.82rem; opacity:0.65; margin-top:0.7rem; }
-
-  .section-label { font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; opacity:0.55; margin: 0 0 0.9rem; }
-  .cards { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
-  .card { border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; background: var(--card); }
-  .card h3 { font-size: 1.2rem; margin-bottom: 0.35rem; }
-  .badge { display: inline-block; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
-           padding: 0.13rem 0.5rem; border-radius: 999px; margin-left: 0.45rem; vertical-align: middle;
-           background: rgba(127,127,127,0.16); color: inherit; }
-  .badge.beta { background: rgba(47,129,247,0.16); color: var(--accent); }
-  .badge.free { background: rgba(46,160,67,0.16); color: var(--green); }
-  .card p { font-size: 0.93rem; opacity: 0.82; }
-  .card .cmp { font-size:0.8rem; opacity:0.6; margin-top:0.5rem; }
-  .card a.inline-dl { display:inline-block; margin-top:0.8rem; font-size:0.9rem; font-weight:600; color:var(--green); }
-
-  section.about { margin-top: 3rem; text-align: center; opacity: 0.9; }
-  section.about .manifesto { max-width: 720px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7; text-align: left; }
+  main { max-width: 880px; margin: 0 auto; padding: 0 1.5rem 3rem; width: 100%; }
+  .cards { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 1rem; }
+  .card { border: 1px solid rgba(127,127,127,0.25); border-radius: 12px; padding: 1.5rem; }
+  .card h2 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+  .badge { display: inline-block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+           letter-spacing: 0.06em; padding: 0.15rem 0.55rem; border-radius: 999px;
+           background: rgba(46,160,67,0.15); color: #2ea043; margin-left: 0.5rem; vertical-align: middle; }
+  .card p { font-size: 0.95rem; opacity: 0.85; }
+  section.about { margin-top: 2.5rem; text-align: center; opacity: 0.85; font-size: 0.98rem; }
   footer { margin-top: auto; padding: 2rem 1.5rem; text-align: center; font-size: 0.85rem; opacity: 0.6; }
-  a { color: var(--accent); text-decoration: none; }
+  a { color: #2f81f7; text-decoration: none; }
   a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 <header>
   <h1>Gnometrix Labs</h1>
-  <p class="tagline">Software for discovery &mdash; affordable, local-first tools built by scientists.</p>
+  <p class="tagline">Affordable software for science &mdash; built by scientists.</p>
 </header>
 <main>
-
-  <!-- Featured: GnoWrite free download -->
-  <div class="featured">
-    <h2>GnoWrite<span class="free">Free</span></h2>
-    <p>A scientific manuscript workspace &mdash; drafting, reference management, and high-fidelity Word and PDF export in one place. Free for everyone.</p>
-    <a class="dl-btn" href="./downloads/GnoWrite_0.1.0_x64_en-US.msi">Download for Windows (.msi)</a>
-    <div class="dl-meta">Version 0.1.0 &middot; Windows 64-bit &middot; 4 MB installer</div>
-  </div>
-
-  <p class="section-label">The Gnometrix suite</p>
   <div class="cards">
-
     <div class="card">
-      <h3>GnoGraph<span class="badge beta">Beta</span></h3>
-      <p>Statistical graphing and analysis: publication-quality figures, a full stats engine (frequentist, Bayesian, and mixed-effects), and an AI assistant that selects and runs the right test from a plain-English description of your experiment.</p>
-      <div class="cmp">A local-first alternative to GraphPad Prism.</div>
+      <h2>GnoGraph<span class="badge">Beta</span></h2>
+      <p>Statistical graphing and analysis for researchers: publication-quality figures, rigorous statistics, and an assistant that speaks your language. Beta program opening soon.</p>
     </div>
-
     <div class="card">
-      <h3>GnoWrite<span class="badge free">Free</span></h3>
-      <p>A scientific manuscript workspace for drafting, citations, and document fidelity &mdash; keeping your writing, references, and export pipeline together.</p>
-      <a class="inline-dl" href="./downloads/GnoWrite_0.1.0_x64_en-US.msi">Download for Windows (.msi) &rarr;</a>
+      <h2>GnoWrite<span class="badge">In development</span></h2>
+      <p>A scientific manuscript workspace: writing, citations, and document fidelity in one place. Planned for open-source release on completion.</p>
     </div>
-
-    <div class="card">
-      <h3>GnoScientist<span class="badge">In development</span></h3>
-      <p>A multi-agent research platform: coordinated AI specialists for literature synthesis, grant review, and manuscript critique, with live queries to PubMed, ClinicalTrials.gov, and structural-biology databases.</p>
-      <div class="cmp">More than a single research chatbot.</div>
-    </div>
-
-    <div class="card">
-      <h3>GnoCyte<span class="badge">In development</span></h3>
-      <p>Quantitative microscopy image analysis: large bioimage handling, segmentation, tracking, FRAP, and GPU-accelerated 3D rendering &mdash; with open data export and reproducible reports.</p>
-      <div class="cmp">An open alternative to Imaris and arivis.</div>
-    </div>
-
-    <div class="card">
-      <h3>GnoBio<span class="badge">In development</span></h3>
-      <p>A unified bioinformatics and molecular-biology desktop: cloning, NGS workflows, spatial omics, and a genome browser, orchestrated through a natural-language interface.</p>
-      <div class="cmp">One workspace in place of SnapGene + Geneious.</div>
-    </div>
-
-    <div class="card">
-      <h3>GnoBook<span class="badge">In development</span></h3>
-      <p>An offline-first electronic lab notebook with cryptographic, tamper-evident records and compliance-ready forensic export &mdash; self-hosted, with full data sovereignty.</p>
-      <div class="cmp">A self-hosted alternative to Benchling.</div>
-    </div>
-
   </div>
-
   <section class="about">
-    <p class="manifesto">As scientists, we know the frustration of open-source tools that are difficult to install and work with &mdash; often without a graphical interface &mdash; and of ultra-expensive software that is out of reach for most individual users, or even individual laboratories. Our objective is to exploit the advantages of AI-assisted coding to bring high-quality scientific software, designed with laboratory workflows in mind, at a price that individuals can afford.</p>
+    <p>We are scientists using AI to build affordable tools for science and free, high-quality science education resources.</p>
     <p style="margin-top:0.6rem"><a href="https://github.com/gnometrix-labs">Find us on GitHub</a></p>
   </section>
 </main>
-<footer>&copy; 2026 Gnometrix Labs &middot; Software for Discovery</footer>
+<footer>&copy; 2026 Gnometrix Labs</footer>
 </body>
 </html>
